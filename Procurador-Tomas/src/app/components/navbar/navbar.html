@@ -1,0 +1,71 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Left: Logo -->
+      <div class="flex-shrink-0">
+        <a href="#inicio" class="flex items-center space-x-2 group">
+          <span class="text-xl font-bold text-brand-navy tracking-tight transition group-hover:text-brand-blue">
+            Gabriel Tomás <span class="text-brand-gold font-normal">| Procurador</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Center: Desktop Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-brand-blue relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 after:transition-transform hover:after:scale-x-100">Inicio</a>
+        <a href="#despacho" class="text-sm font-semibold text-slate-600 hover:text-brand-blue relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 after:transition-transform hover:after:scale-x-100">El Despacho</a>
+        <a href="#servicios" class="text-sm font-semibold text-slate-600 hover:text-brand-blue relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 after:transition-transform hover:after:scale-x-100">Servicios</a>
+        <a href="#partidos" class="text-sm font-semibold text-slate-600 hover:text-brand-blue relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 after:transition-transform hover:after:scale-x-100">Partidos Judiciales</a>
+        <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-brand-blue relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 after:transition-transform hover:after:scale-x-100">Contacto</a>
+      </div>
+
+      <!-- Right: CTA Button -->
+      <div class="hidden md:flex items-center">
+        <a href="tel:+34971000000" class="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md hover:shadow-lg focus:outline-hidden focus:ring-2 focus:ring-brand-blue/50 transform active:scale-95 transition-all">
+          <svg class="w-4 h-4 mr-2 text-brand-gold animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.252 1.01l-1.39 1.39a13.983 13.983 0 005.65 5.65l1.39-1.39a1 1 0 011.01-.252l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Llamar Despacho
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button (click)="toggleMenu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-hidden" aria-controls="mobile-menu" [attr.aria-expanded]="isMenuOpen()">
+          <span class="sr-only">Abrir menú principal</span>
+          @if (!isMenuOpen()) {
+            <svg class="h-6 w-6 block animate-fade-in" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          } @else {
+            <svg class="h-6 w-6 block animate-fade-in" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          }
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  @if (isMenuOpen()) {
+    <div class="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-inner" id="mobile-menu">
+      <a href="#inicio" (click)="closeMenu()" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50 transition">Inicio</a>
+      <a href="#despacho" (click)="closeMenu()" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50 transition">El Despacho</a>
+      <a href="#servicios" (click)="closeMenu()" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50 transition">Servicios</a>
+      <a href="#partidos" (click)="closeMenu()" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50 transition">Partidos Judiciales</a>
+      <a href="#contacto" (click)="closeMenu()" class="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50 transition">Contacto</a>
+      
+      <div class="pt-4 pb-2 border-t border-slate-100">
+        <a href="tel:+34971000000" class="flex items-center justify-center w-full px-4 py-3 rounded-lg text-sm font-bold text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md transition">
+          <svg class="w-4 h-4 mr-2 text-brand-gold animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.252 1.01l-1.39 1.39a13.983 13.983 0 005.65 5.65l1.39-1.39a1 1 0 011.01-.252l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Llamar Despacho
+        </a>
+      </div>
+    </div>
+  }
+</nav>

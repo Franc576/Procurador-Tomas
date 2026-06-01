@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  --color-brand-navy: #0f172a;       /* Deep Slate Navy (Slate 900) */
+  --color-brand-navy-dark: #020617;  /* Deep dark navy (Slate 950) */
+  --color-brand-blue: #1e40af;      /* Corporate Cobalt Blue (Blue 800) */
+  --color-brand-blue-hover: #1d4ed8;/* Corporate Cobalt Blue Hover (Blue 700) */
+  --color-brand-blue-light: #f0f9ff;/* Soft light blue backdrop (Blue 50) */
+  --color-brand-gold: #c5a880;      /* Warm premium gold accent */
+  --color-brand-gold-hover: #b3946b;/* Warm premium gold accent hover */
+}
+
+/* Custom baseline styling for professional legal aesthetics */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc; /* Slate 50 */
+  color: #0f172a; /* Slate 900 */
+}
+
+/* Smooth transitions for links and interactive buttons */
+a, button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar to keep layout premium */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

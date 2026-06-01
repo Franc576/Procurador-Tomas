@@ -1,0 +1,119 @@
+<section id="contacto" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      
+      <!-- Left side: Contact Details Cards -->
+      <div class="lg:col-span-5 space-y-8">
+        <div class="space-y-4">
+          <div class="inline-flex items-center space-x-2">
+            <span class="h-px w-8 bg-brand-gold"></span>
+            <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">Contacto</span>
+          </div>
+          <h2 class="text-3xl font-bold text-brand-navy tracking-tight">
+            ¿Hablamos sobre su caso?
+          </h2>
+          <p class="text-slate-500 font-light leading-relaxed text-sm">
+            Contacte directamente con nuestro despacho técnico para concertar una colaboración profesional ágil y coordinar su representación procesal en Mallorca.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          
+          <!-- Tel card -->
+          <a href="tel:+34971000000" class="flex items-start p-5 rounded-2xl border border-slate-100 hover:border-brand-gold bg-slate-50/50 hover:bg-slate-50 transition group">
+            <div class="shrink-0 p-3 bg-white rounded-xl border border-slate-200/80 group-hover:border-brand-gold/30 text-brand-blue group-hover:text-brand-gold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.252 1.01l-1.39 1.39a13.983 13.983 0 005.65 5.65l1.39-1.39a1 1 0 011.01-.252l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-sm font-bold text-brand-navy">Teléfono Despacho</h4>
+              <p class="text-base font-semibold text-slate-700 mt-1 hover:text-brand-blue">+34 971 00 00 00</p>
+              <p class="text-xs text-slate-400 mt-0.5">Atención directa e inmediata de Lunes a Viernes</p>
+            </div>
+          </a>
+
+          <!-- Email card -->
+          <a href="mailto:contacto@gabrieltomasprocurador.es" class="flex items-start p-5 rounded-2xl border border-slate-100 hover:border-brand-gold bg-slate-50/50 hover:bg-slate-50 transition group">
+            <div class="shrink-0 p-3 bg-white rounded-xl border border-slate-200/80 group-hover:border-brand-gold/30 text-brand-blue group-hover:text-brand-gold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-sm font-bold text-brand-navy">Correo Electrónico</h4>
+              <p class="text-base font-semibold text-slate-700 mt-1 hover:text-brand-blue">contacto&#64;gabrieltomasprocurador.es</p>
+              <p class="text-xs text-slate-400 mt-0.5">Recepción de escritos y solicitudes técnicas</p>
+            </div>
+          </a>
+
+          <!-- Location card -->
+          <div class="flex items-start p-5 rounded-2xl border border-slate-100 bg-slate-50/50">
+            <div class="shrink-0 p-3 bg-white rounded-xl border border-slate-200/80 text-brand-blue">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-sm font-bold text-brand-navy">Despacho Central</h4>
+              <p class="text-base font-semibold text-slate-700 mt-1">Palma de Mallorca</p>
+              <p class="text-xs text-slate-400 mt-0.5">Islas Baleares, España</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right side: Beautiful Contact Form -->
+      <div class="lg:col-span-7 bg-slate-50 border border-slate-200/60 rounded-2xl p-8 sm:p-10 shadow-xs">
+        <form (submit)="onSubmit($event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nombre Completo</label>
+              <input type="text" id="name" name="name" [(ngModel)]="contactModel.name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 focus:outline-hidden focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/10 transition" placeholder="Ej: Juan Pérez">
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Correo Electrónico</label>
+              <input type="email" id="email" name="email" [(ngModel)]="contactModel.email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 focus:outline-hidden focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/10 transition" placeholder="Ej: juan@abogado.com">
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Asunto / Partido Judicial</label>
+            <input type="text" id="subject" name="subject" [(ngModel)]="contactModel.subject" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 focus:outline-hidden focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/10 transition" placeholder="Ej: Representación Judicial Palma">
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Mensaje / Requerimiento</label>
+            <textarea id="message" name="message" rows="5" [(ngModel)]="contactModel.message" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 focus:outline-hidden focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/10 transition resize-none" placeholder="Detalle aquí las particularidades del caso o trámite procesal solicitado..."></textarea>
+          </div>
+
+          <!-- Consent checkbox -->
+          <div class="flex items-start">
+            <input type="checkbox" id="consent" name="consent" [(ngModel)]="contactModel.consent" required class="mt-1 h-4 w-4 rounded-sm border-slate-300 text-brand-blue focus:ring-brand-blue transition">
+            <label for="consent" class="ml-3 text-xs text-slate-500 font-light leading-relaxed">
+              Acepto y consiento el tratamiento de mis datos de conformidad con la Política de Privacidad de este despacho procesal para dar respuesta a mi solicitud de consulta.
+            </label>
+          </div>
+
+          <!-- Status Messages -->
+          @if (submitStatus() === 'success') {
+            <div class="p-4 rounded-lg bg-green-50 text-green-700 border border-green-200/50 text-xs font-semibold flex items-center space-x-2 animate-fade-in">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>¡Mensaje enviado con éxito! Nos pondremos en contacto a la mayor brevedad.</span>
+            </div>
+          } @else if (submitStatus() === 'error') {
+            <div class="p-4 rounded-lg bg-rose-50 text-rose-700 border border-rose-200/50 text-xs font-semibold flex items-center space-x-2 animate-fade-in">
+              <svg class="w-5 h-5 text-rose-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+              <span>Por favor, complete los campos obligatorios y acepte el consentimiento legal.</span>
+            </div>
+          }
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-bold text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md hover:shadow-lg focus:outline-hidden focus:ring-2 focus:ring-brand-blue/50 transform active:scale-95 transition-all cursor-pointer">
+            Enviar Mensaje
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+    
+  </div>
+</section>
