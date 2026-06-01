@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
       <div class="inline-flex items-center space-x-2 justify-center">
         <span class="h-px w-6 bg-brand-gold"></span>
         <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">Ámbito de Actuación</span>
@@ -10,56 +10,93 @@
       </div>
       
       <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight">
-        Cobertura Procesal en Mallorca
+        Sede Central y Cobertura
       </h2>
       
       <p class="text-slate-500 font-light leading-relaxed text-sm">
-        Aunque nuestro despacho físico central se ubica en Palma de Mallorca, ofrecemos representación técnica y gestión procesal en los principales partidos judiciales. Si tu asunto o juzgado corresponde a cualquiera de estas zonas, puedes contactar con nosotros.
+        Nuestra actividad procesal se centraliza en Palma de Mallorca, ofreciendo representación técnica presencial diaria y cobertura extendida a otros partidos judiciales de la isla.
       </p>
     </div>
 
-    <!-- Judicial Districts Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Restructured Content: Asymmetric Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
       
-      <!-- District 1: Palma -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs relative overflow-hidden group">
-        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue group-hover:bg-brand-gold transition-colors"></div>
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Palma de Mallorca</h3>
-        <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-4">Partido Judicial nº 1 • Despacho Central</p>
-        <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
-          Sede principal de nuestro despacho y de los órganos judiciales de Baleares. Presencia y representación diaria directa en todos los juzgados de la capital.
-        </p>
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-          <span>Presencia diaria activa</span>
-          <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+      <!-- Left Column: Palma Office (Main Headquarters) -->
+      <div class="lg:col-span-7 bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/80 shadow-md relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue"></div>
+        
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <span class="px-3 py-1 rounded-full bg-brand-blue-light text-brand-blue font-bold text-xs uppercase tracking-wider">Despacho Central</span>
+            <span class="flex h-2.5 w-2.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-brand-navy">Palma de Mallorca</h3>
+          <p class="text-slate-500 font-light text-sm leading-relaxed">
+            Sede principal donde gestionamos de manera directa toda la representación procesal ante los órganos judiciales de Baleares, incluyendo la Audiencia Provincial, el Tribunal Superior de Justicia, y los juzgados de lo Mercantil, Social, Contencioso-Administrativo e Instrucción.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start space-x-3 text-sm text-slate-600">
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Presencia física y asistencia diaria en todos los juzgados de la capital.</span>
+            </div>
+            <div class="flex items-start space-x-3 text-sm text-slate-600">
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
+              <span>Control riguroso de plazos, vencimientos y notificaciones inmediatas.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+          <span>Partido Judicial nº 1</span>
+          <span class="font-semibold text-brand-blue">Sede Física Central</span>
         </div>
       </div>
 
-      <!-- District 2: Inca -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs relative overflow-hidden group">
-        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue group-hover:bg-brand-gold transition-colors"></div>
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Inca</h3>
-        <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-4">Partido Judicial nº 2 • Cobertura Directa</p>
-        <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
-          Tramitación de expedientes ante los juzgados de Inca. Si resides o tienes asuntos en la zona central de la isla, gestionamos tu representación de forma integrada.
-        </p>
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-          <span>Cobertura presencial directa</span>
-          <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
-        </div>
-      </div>
+      <!-- Right Column: Extended Coverage (Inca and Manacor) -->
+      <div class="lg:col-span-5 bg-slate-50 rounded-2xl p-8 border border-slate-200/60 shadow-xs flex flex-col justify-between">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <span class="px-3 py-1 rounded-full bg-slate-200/60 text-slate-600 font-bold text-xs uppercase tracking-wider">Cobertura Adicional</span>
+          </div>
 
-      <!-- District 3: Manacor -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs relative overflow-hidden group">
-        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue group-hover:bg-brand-gold transition-colors"></div>
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Manacor</h3>
-        <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-4">Partido Judicial nº 3 • Cobertura Directa</p>
-        <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
-          Representación procesal ante los juzgados de Manacor. Llevamos el control riguroso de tus plazos y trámites de la zona de levante desde nuestro despacho central.
-        </p>
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-          <span>Cobertura presencial directa</span>
-          <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+          <h3 class="text-xl font-bold text-brand-navy">Zonas de Tramitación</h3>
+          
+          <p class="text-slate-500 font-light text-sm leading-relaxed">
+            Ofrecemos cobertura de representación procesal e intermediación en los juzgados de las siguientes demarcaciones, coordinando y gestionando todo de forma unificada desde nuestra oficina central:
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <!-- Inca Item -->
+            <div class="p-4 bg-white rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-4">
+              <div class="p-2 rounded-lg bg-brand-gold/10 text-brand-gold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-brand-navy">Inca</h4>
+                <p class="text-xs text-slate-400">Partido Judicial nº 2 • Cobertura procesal</p>
+              </div>
+            </div>
+
+            <!-- Manacor Item -->
+            <div class="p-4 bg-white rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-4">
+              <div class="p-2 rounded-lg bg-brand-gold/10 text-brand-gold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-brand-navy">Manacor</h4>
+                <p class="text-xs text-slate-400">Partido Judicial nº 3 • Cobertura procesal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-200/40 text-xs text-slate-400 italic">
+          *Todas las gestiones en los juzgados de Inca y Manacor se realizan de forma coordinada desde Palma de Mallorca para su comodidad.
         </div>
       </div>
 
@@ -70,7 +107,7 @@
       <div class="mb-6 md:mb-0 md:mr-8 space-y-2">
         <h4 class="text-lg font-bold tracking-wide">¿Requiere representación en otros partidos judiciales de Baleares?</h4>
         <p class="text-sm text-slate-300 font-light max-w-2xl">
-          Consulte directamente con nuestro despacho las opciones de diligenciación urgente y procuraduría institucional en Mahón, Ibiza, Ciutadella y Formentera.
+          Consulte directamente con nuestro despacho las opciones de diligenciación urgente y procuraduría en Mahón, Ibiza, Ciutadella y Formentera.
         </p>
       </div>
       <a href="#contacto" class="shrink-0 inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-bold text-brand-navy bg-brand-gold hover:bg-brand-gold-hover transition shadow-md">
