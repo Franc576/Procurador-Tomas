@@ -22,38 +22,54 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
       
       <!-- Left Column: Palma Office (Main Headquarters) -->
-      <div class="lg:col-span-7 bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/80 shadow-md relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue"></div>
+      <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200/80 shadow-md relative overflow-hidden flex flex-col">
+        <div class="absolute top-0 left-0 w-2 h-full bg-brand-blue z-10"></div>
         
-        <div class="space-y-6">
-          <div class="flex items-center space-x-3">
-            <span class="px-3 py-1 rounded-full bg-brand-blue-light text-brand-blue font-bold text-xs uppercase tracking-wider">Despacho Central</span>
-            <span class="flex h-2.5 w-2.5 relative">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-            </span>
-          </div>
-          
-          <h3 class="text-2xl font-bold text-brand-navy">Palma de Mallorca</h3>
-          <p class="text-slate-500 font-light text-sm leading-relaxed">
-            Sede principal donde gestionamos de manera directa toda la representación procesal ante los órganos judiciales de Baleares, incluyendo la Audiencia Provincial, el Tribunal Superior de Justicia, y los juzgados de lo Mercantil, Social, Contencioso-Administrativo e Instrucción.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start space-x-3 text-sm text-slate-600">
-              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-              <span>Presencia física y asistencia diaria en todos los juzgados de la capital.</span>
+        <div class="grid grid-cols-1 md:grid-cols-12 h-full items-stretch">
+          <!-- Text Content -->
+          <div class="p-8 sm:p-10 md:col-span-7 flex flex-col justify-between h-full space-y-6">
+            <div class="space-y-6">
+              <div class="flex items-center space-x-3">
+                <span class="px-3 py-1 rounded-full bg-brand-blue-light text-brand-blue font-bold text-xs uppercase tracking-wider">Despacho Central</span>
+                <span class="flex h-2.5 w-2.5 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-brand-navy">Palma de Mallorca</h3>
+              <p class="text-slate-500 font-light text-sm leading-relaxed">
+                Sede principal donde gestionamos de manera directa toda la representación procesal ante los órganos judiciales de Baleares, incluyendo la Audiencia Provincial, el Tribunal Superior de Justicia, y los juzgados de lo Mercantil, Social, Contencioso-Administrativo e Instrucción.
+              </p>
+    
+              <div class="space-y-3 pt-2">
+                <div class="flex items-start space-x-3 text-sm text-slate-600">
+                  <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                  <span>Presencia física y asistencia diaria en todos los juzgados de la capital.</span>
+                </div>
+                <div class="flex items-start space-x-3 text-sm text-slate-600">
+                  <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
+                  <span>Control riguroso de plazos, vencimientos y notificaciones inmediatas.</span>
+                </div>
+              </div>
             </div>
-            <div class="flex items-start space-x-3 text-sm text-slate-600">
-              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
-              <span>Control riguroso de plazos, vencimientos y notificaciones inmediatas.</span>
+    
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+              <span>Partido Judicial nº 1</span>
+              <span class="font-semibold text-brand-blue">Sede Física Central</span>
             </div>
           </div>
-        </div>
 
-        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-          <span>Partido Judicial nº 1</span>
-          <span class="font-semibold text-brand-blue">Sede Física Central</span>
+          <!-- Image Content (Link to Google Maps) -->
+          <a href="https://www.google.com/maps/search/?api=1&query=Juzgados+Via+Alemania+Palma+de+Mallorca" target="_blank" rel="noopener noreferrer" class="md:col-span-5 relative min-h-[250px] md:min-h-full overflow-hidden group block cursor-pointer">
+            <img src="/palma.jpg" alt="Palma de Mallorca" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/25 via-transparent to-transparent"></div>
+            <!-- Elegant Hover Indicator -->
+            <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-xs px-3 py-2 rounded-lg text-xs font-bold text-brand-navy shadow-md flex items-center space-x-1.5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Ver en Google Maps</span>
+            </div>
+          </a>
         </div>
       </div>
 
