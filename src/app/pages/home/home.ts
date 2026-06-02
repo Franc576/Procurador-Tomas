@@ -13,4 +13,4 @@ import { Contact } from './sections/contact/contact';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home {}
+export class Home { }
