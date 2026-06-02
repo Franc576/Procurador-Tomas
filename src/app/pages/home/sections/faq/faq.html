@@ -1,0 +1,86 @@
+<section id="faq" class="py-24 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+  
+  <!-- Subtle dark background decorative gradients to maintain high-end aesthetic -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-blue/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Header of the section -->
+    <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+      <div class="inline-flex items-center space-x-2.5 justify-center">
+        <span class="h-px w-6 bg-brand-gold/60"></span>
+        <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">Preguntas Frecuentes</span>
+        <span class="h-px w-6 bg-brand-gold/60"></span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
+        Resolvemos tus dudas
+      </h2>
+      
+      <p class="text-slate-400 font-light leading-relaxed text-sm max-w-xl mx-auto">
+        Respuestas directas y transparentes sobre las gestiones de procuraduría, plazos legales y nuestro servicio de soporte integral.
+      </p>
+    </div>
+
+    <!-- FAQ Grid: 2 columns on tablet/desktop, 1 column on mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
+      @for (faq of faqs; track faq.id) {
+        <div (click)="toggleFaq(faq)"
+             (keydown.enter)="toggleFaq(faq)"
+             (keydown.space)="toggleFaq(faq); $event.preventDefault()"
+             role="button"
+             [attr.aria-expanded]="faq.isOpen"
+             tabindex="0"
+             class="group relative bg-slate-950/40 hover:bg-slate-900/40 border transition-all duration-300 rounded-2xl p-6 md:p-8 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
+             [class.border-slate-800]="!faq.isOpen"
+             [class.border-brand-gold/40]="faq.isOpen"
+             [class.shadow-lg]="faq.isOpen"
+             [class.shadow-brand-gold/5]="faq.isOpen">
+          
+          <!-- Subtle glow accent on card when open or hovered -->
+          <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 bg-radial-[at_top_right] from-brand-gold/5 via-transparent to-transparent pointer-events-none"
+               [class.opacity-100]="faq.isOpen"></div>
+          
+          <!-- Card content -->
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <div class="flex items-start justify-between space-x-4">
+              <!-- Question -->
+              <h3 class="text-base sm:text-lg font-semibold transition-colors duration-300 pr-2"
+                  [class.text-white]="faq.isOpen"
+                  [class.text-slate-200]="!faq.isOpen"
+                  [class.group-hover:text-white]="!faq.isOpen">
+                {{ faq.question }}
+              </h3>
+              
+              <!-- Premium indicator (Gold arrow) that rotates on active -->
+              <span class="flex-shrink-0 p-1.5 rounded-full bg-slate-900 border border-slate-800 transition-all duration-300"
+                    [class.border-brand-gold/40]="faq.isOpen"
+                    [class.bg-brand-gold/10]="faq.isOpen">
+                <svg class="w-4 h-4 text-brand-gold transition-transform duration-300 ease-in-out"
+                     [class.rotate-180]="faq.isOpen"
+                     fill="none" 
+                     stroke="currentColor" 
+                     viewBox="0 0 24 24" 
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </div>
+
+            <!-- Animated Answer Section using CSS Grid transition -->
+            <div class="faq-answer-container" [class.is-open]="faq.isOpen">
+              <div class="faq-answer-content">
+                <p class="pt-4 mt-4 text-slate-400 font-light text-sm leading-relaxed border-t border-slate-900">
+                  {{ faq.answer }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
