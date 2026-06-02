@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-aviso-legal',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './footer.html',
-  styleUrl: './footer.css'
+  templateUrl: './aviso-legal.html',
+  styleUrl: './aviso-legal.css'
 })
-export class Footer {}
+export class AvisoLegalComponent {}
