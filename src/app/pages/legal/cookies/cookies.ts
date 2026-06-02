@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-cookies',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './footer.html',
-  styleUrl: './footer.css'
+  templateUrl: './cookies.html',
+  styleUrl: './cookies.css'
 })
-export class Footer {}
+export class CookiesComponent {}
