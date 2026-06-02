@@ -1,0 +1,22 @@
+/* FAQ Expand/Collapse CSS grid height animation */
+.faq-answer-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-container.is-open {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 300ms ease-out, transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-container.is-open .faq-answer-content {
+  opacity: 1;
+  transform: translateY(0);
+}
