@@ -16,18 +16,39 @@ export class Contact {
     consent: false
   };
 
-  protected readonly submitStatus = signal<'idle' | 'success' | 'error'>('idle');
+  protected readonly submitStatus = signal<'idle' | 'success' | 'error' | 'sending'>('idle');
 
-  protected onSubmit(event: Event): void {
+  protected async onSubmit(event: Event): Promise<void> {
     event.preventDefault();
-    if (!this.contactModel.consent || !this.contactModel.name || !this.contactModel.email) {
+    if (!this.contactModel.consent || !this.contactModel.name || !this.contactModel.email || !this.contactModel.message) {
       this.submitStatus.set('error');
       return;
     }
-    // Simulate contact form submission
-    this.submitStatus.set('success');
-    
-    // Clear form after delay
+
+    this.submitStatus.set('sending');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.contactModel)
+      });
+
+      if (response.ok) {
+        this.submitStatus.set('success');
+        this.resetForm();
+      } else {
+        this.submitStatus.set('error');
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      this.submitStatus.set('error');
+    }
+  }
+
+  private resetForm(): void {
     setTimeout(() => {
       this.contactModel.name = '';
       this.contactModel.email = '';
