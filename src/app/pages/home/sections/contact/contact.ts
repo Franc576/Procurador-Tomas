@@ -13,7 +13,8 @@ export class Contact {
     email: '',
     subject: '',
     message: '',
-    consent: false
+    consent: false,
+    website: '' // Honeypot anti-bot
   };
 
   protected readonly submitStatus = signal<'idle' | 'success' | 'error' | 'sending'>('idle');

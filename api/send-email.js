@@ -1,3 +1,16 @@
+/**
+ * Escapa caracteres especiales de HTML para prevenir inyecciones XSS.
+ */
+function escapeHtml(text) {
+  if (!text) return '';
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export default async function handler(req, res) {
   // Manejo del método POST
   if (req.method !== 'POST') {
@@ -6,7 +19,19 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, subject, message, consent } = req.body;
+    const { name, email, subject, message, consent, website } = req.body;
+
+    // Honeypot anti-bot: si el campo oculto tiene valor, es un bot
+    if (website) {
+      // Respuesta falsa de éxito para no alertar al bot
+      return res.status(200).json({ success: true, message: 'Correo enviado correctamente' });
+    }
+
+    // Versiones sanitizadas para uso dentro de la plantilla HTML
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeSubject = escapeHtml(subject);
+    const safeMessage = escapeHtml(message);
 
     // Validar consentimiento y campos obligatorios
     if (!consent) {
@@ -14,6 +39,12 @@ export default async function handler(req, res) {
     }
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Faltan campos requeridos (nombre, email y mensaje).' });
+    }
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'El formato del correo electrónico no es válido.' });
     }
 
     const apiKey = process.env.BREVO_API_KEY;
@@ -105,7 +136,7 @@ export default async function handler(req, res) {
                     <p style="margin:0; font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Nombre</p>
                   </td>
                   <td style="padding: 12px 16px; background-color: #ffffff;">
-                    <p style="margin:0; font-size: 14px; color: #1e293b; font-weight: 500;">${name}</p>
+                    <p style="margin:0; font-size: 14px; color: #1e293b; font-weight: 500;">${safeName}</p>
                   </td>
                 </tr>
               </table>
@@ -117,7 +148,7 @@ export default async function handler(req, res) {
                     <p style="margin:0; font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Email</p>
                   </td>
                   <td style="padding: 12px 16px; background-color: #ffffff;">
-                    <a href="mailto:${email}" style="font-size: 14px; color: #1e40af; font-weight: 500; text-decoration: none;">${email}</a>
+                    <a href="mailto:${safeEmail}" style="font-size: 14px; color: #1e40af; font-weight: 500; text-decoration: none;">${safeEmail}</a>
                   </td>
                 </tr>
               </table>
@@ -129,19 +160,19 @@ export default async function handler(req, res) {
                     <p style="margin:0; font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Asunto</p>
                   </td>
                   <td style="padding: 12px 16px; background-color: #ffffff;">
-                    <p style="margin:0; font-size: 14px; color: #1e293b; font-weight: 500;">${subject || '<em style="color:#94a3b8;">No especificado</em>'}</p>
+                    <p style="margin:0; font-size: 14px; color: #1e293b; font-weight: 500;">${safeSubject || '<em style="color:#94a3b8;">No especificado</em>'}</p>
                   </td>
                 </tr>
               </table>
 
               <!-- ── MENSAJE ── -->
               <p style="margin: 0 0 10px 0; font-size: 10px; font-weight: 700; color: #c5a880; letter-spacing: 2.5px; text-transform: uppercase;">Mensaje / Requerimiento</p>
-              <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1e40af; border-radius: 0 8px 8px 0; padding: 20px 20px; font-size: 14px; color: #334155; line-height: 1.8; white-space: pre-wrap;">${message}</div>
+              <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1e40af; border-radius: 0 8px 8px 0; padding: 20px 20px; font-size: 14px; color: #334155; line-height: 1.8; white-space: pre-wrap;">${safeMessage}</div>
 
               <!-- ── CTA Responder ── -->
               <div style="margin-top: 32px; text-align: center;">
-                <a href="mailto:${email}?subject=Re: ${encodeURIComponent(subject || 'Consulta desde la web')}" style="display: inline-block; background-color: #1e40af; color: #ffffff; font-size: 13px; font-weight: 700; text-decoration: none; padding: 13px 32px; border-radius: 8px; letter-spacing: 0.3px;">
-                  ✉️ &nbsp;Responder a ${name}
+                <a href="mailto:${safeEmail}?subject=Re: ${encodeURIComponent(subject || 'Consulta desde la web')}" style="display: inline-block; background-color: #1e40af; color: #ffffff; font-size: 13px; font-weight: 700; text-decoration: none; padding: 13px 32px; border-radius: 8px; letter-spacing: 0.3px;">
+                  ✉️ &nbsp;Responder a ${safeName}
                 </a>
               </div>
 
